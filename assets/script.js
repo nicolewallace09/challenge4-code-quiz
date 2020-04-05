@@ -1,7 +1,12 @@
+start-btn.addEventListener('click', startQuiz)
+
 // start quiz
-function startQuiz() {
+function startQuiz(questions) {
     counterTime();
     timer = 60 ;
+
+    start-btn.classList.add('hide');
+    questions.classList.remove('hide');
     
     // Loop questions
     for(var i=0; i < questions.Length; i++){
@@ -24,6 +29,21 @@ alert('You got ' + score + '/' + questions.length);
 
 }
 
-//startQuiz();
+// questions 
+var questions = [
+    new Question("Commonly used data types to NOT include:", ["Strings", "Booleans", "Alerts", "Numbers"],"Alerts"),
+    new Question("Commonly used data types to NOT include:", ["Strings", "Booleans", "Alerts", "Numbers"],"Alerts"),
+    new Question("Commonly used data types to NOT include:", ["Strings", "Booleans", "Alerts", "Numbers"],"Alerts"),
+    new Question("Commonly used data types to NOT include:", ["Strings", "Booleans", "Alerts", "Numbers"],"Alerts"),
+    new Question("Commonly used data types to NOT include:", ["Strings", "Booleans", "Alerts", "Numbers"],"Alerts"),
+    
+];
+
+
+// create new 
+var startQuiz = new startQuiz(questions);
+
+// run results 
+results();
 
 }
