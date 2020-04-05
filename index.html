@@ -3,56 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Quiz</title>
-    <link rel="stylesheet" href="assets/style.css" />
+    <title>Coding Quiz</title>
+    <link rel="stylesheet" href="./assets/style.css" />
 </head>
 
-
 <body>
-<div class="container">
-    <div id="start-container">
-             <h2>Coding Quiz Challenege</h2>
+    <div class="scores"><a href="highscores.html">View High Scores</a></div>
+
+    <div class="timer">Time:<span id="time">0</span></div>
+
+    <div class="wrapper">
+        <div id="start-screen" class="start">
+            <h1>Coding Quiz Challenege</h1>
                 <p>
                 Try to answer the following code-related questions within the time limit.
-                </p>
-                <p>
                 Keep in mind that incorrect answers will penalize your score/time
-                </p>
-                <p>
                 by ten seconds!
                 </p>
+
+                <div>
+                <button id="start-btn">Start Quiz</button>
+                </div>
+        </div>
     
-            <div class="buttons">
-                <button class="start-btn" id="start-btn" type="submit">Start Quiz</button>
-            </div>
-    </div>
+        <div id="questions" class="hide">
+            <h2 id = "questions-title"></h2>
+            <div id="choices" id= "choices"></div>
+        </div>
 
-    <div id="questions-container" class="hide">
-            <div id= "question">Question</div>
-            <div class="answer-btn btn" id= btn-grid>
-                <button class="btn">1. Answer</button>
-                <button class="btn">2. Answer</button>
-                <button class="btn">3. Answer</button>
-                <button class="btn">4. Answer</button>
-            </div>
-        
-    </div>
-</div>
+        <div id="end-screen" class="hide">
+            <h2>All done!</h2>
+            <p>Your final scoore is <span id="final score"></span></p>
+            <p>
+            Enter your initials: <input type="text" name="initials" id="initials" />
+            </p>
+        </div>
 
-    
-    <div class="scores"></div>
-
-        <div class="questions">
-            <h2 id= question-title>
-          
-
-
-    <div class="results">
 
     </div>
-
-
-
 
     <script src="assets/script.js"></script>
 </body>

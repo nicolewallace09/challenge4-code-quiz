@@ -14,25 +14,29 @@ body {
     margin: 0;
     display: flex;
     justify-content: center;
-    align-items: left;
+    align-items: center;
 }
 
-.container {
-    width: 80;
-    max-width: 80%;
+.wrapper {
+    max-width: 33%;
+    justify-content: center;
+    text-align: center;
+    margin: 200px auto;
+    
 }
 
-h2 {
+.h1 {
     font-size: 32px;
+    text-align: center;
 }
 
-p {
-    font-size: 20px;
+.p {
+    font-size: 18px;
     margin: 10px auto;
     padding: auto;
 }
 
-.start-btn {
+#start-btn {
     background-color: var(--darkpurple);
     color: white;
     padding: 15px 20px;
@@ -54,11 +58,25 @@ p {
     margin: 20px 0; 
 }
 
-.btn:hover, .start-btn:hover {
+.btn:hover, #start-btn:hover {
     background-color:var(--lightpurple);
 }
 
 
+
 .hide {
     display: none;
+}
+
+.scores {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    
+}
+
+.timer {
+    position: absolute;
+    top: 8px;
+    right: 16px;
 }
