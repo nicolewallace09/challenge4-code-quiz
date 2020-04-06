@@ -123,4 +123,10 @@ input {
     margin-bottom: 0.5rem;
 }
 
+.form {
+    max-width: 100%;
+    justify-content: center;
+    text-align: center;
+    margin: 200px auto;
+}
 

@@ -54,6 +54,7 @@ const questionsContainer = document.getElementById('question-container');
 const questionsEl = document.getElementById('question');
 const answerButton = document.getElementById('choices');
 const endScreen = document.getElementById('end-screen');
+const scoreBonus = 10;
 
 let score = 0 
 let randomQuestions 
@@ -90,6 +91,7 @@ function generateQuestion() {
     setQuestions++
     if (setQuestions <=4) {
         timer()
+        localStorage.setItem('mostRecentScore',score)
     } else (setQuestions = 0) [
         endQuiz()
     ]
@@ -126,7 +128,8 @@ var score = "1";
            
             // if (question[1].answer[1].correct) score += 1
             if (question.answers[array[0]].correct) {                
-                score+=1;
+                incrementScore(scoreBonus);
+                console.log(incrementScore)
                 success()
             } else {
                 failure()
@@ -139,7 +142,8 @@ var score = "1";
             console.log(question.answers[1].text)
             
             if (question.answers[array[1]].correct) {
-                score+=1;
+                incrementScore(scoreBonus);
+                console.log(incrementScore)
                 success()
             } else {
                 failure()
@@ -153,7 +157,8 @@ var score = "1";
             console.log(question.answers[2].text)
 
             if (question.answers[array[2]].correct) {
-                score+=1;
+                incrementScore(scoreBonus);
+                console.log(incrementScore)
                 success()
             } else {
                 failure()
@@ -166,7 +171,8 @@ var score = "1";
     document.querySelector(`.btn4`).addEventListener("click", function(){
             console.log(question.answers[3].text)
             if (question.answers[array[3]].correct) {
-                score+=1;
+                incrementScore(scoreBonus);
+                console.log(incrementScore)
                 success()
             } else {
                 failure()
@@ -176,7 +182,10 @@ var score = "1";
         
         })
     
+}
 
+incrementScore = num => {
+    score += num; 
 }
 
  function success () {
@@ -192,6 +201,47 @@ function failure () {
     document.querySelector("#choices").appendChild(wrong)
 }
 
+// highscores
+
+const initials = document.getElementById("intials");
+const submitButton = document.getElementById('submit')
+const finalScore = document.querySelector('finalScore');
+const mostRecentScore = localStorage.getItem('mostRecentScore');
+
+const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+
+const maxHigh = 5;
+
+finalScore.innerText= mostRecentScore
+
+initials.addEventListener("keyup", () => {
+    console.log(initials.value);
+    submitButton.disabled = !initials.value;
+});
+
+saveHighScore = e => {
+    console.log("clicked submit button");
+    e.preventDefault();
+
+    const score = {
+        score: Math.floor(Math.random() * 100),
+        name: initials.value
+    }
+    highScores.push(score);
+
+    highScores.sort( (a,b) => b.score - a.score);
+
+    highScores.splice(5);
+
+    localStorage.setItem('highScores', JSON.stringify(highScores));
+
+    window.location.assign("/");
+
+};
+
+
+
+
 // end quiz 
 function endQuiz () {
     startButton.remove()
@@ -200,3 +250,5 @@ function endQuiz () {
     endScreen.classList.remove('hide');
     
 }
+
+

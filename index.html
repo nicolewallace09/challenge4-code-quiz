@@ -38,13 +38,16 @@
 
         <div id="end-screen" class="hide">
             <h2>All done!</h2>
-            <p>Your final score is <span id="score"></span></p>
+            <p>Your final score is <span id="finalScore"></span></p>
             <p>
-            Enter your initials: <input type="text" name="initials" id="initials" placeholder="Enter Here" />
+            Enter your initials: 
+            <form>
+            <input type="text" name="initials" id="initials" placeholder="Enter Here" />
+            </form>
             </p>
 
             <div>
-                <button id="submit" class="submit">Submit</button>
+                <button id="submit" class="submit" onclick="saveHighScore(event)">Submit</button>
             </div>
         </div>
 
