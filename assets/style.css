@@ -29,11 +29,12 @@ body {
     margin: 200px auto;
 }
 
-.questions-container {
+#choices {
     display: flex;
     flex-wrap: wrap;
-    align-content: column;
-    gap: 5px;
+    flex-direction: column;
+    align-content: flex-start;
+    gap: 10px;
 }
 
 .h1 {
@@ -41,10 +42,12 @@ body {
     text-align: center;
 }
 
-.p {
+#p {
     font-size: 18px;
     margin: 10px auto;
     padding: auto;
+    font-style: italic;
+    color: lightgrey
 }
 
 #start-btn {
@@ -58,9 +61,11 @@ body {
 .btn1, .btn2, .btn3, .btn4 {
     background-color: var(--darkpurple);
     color: white;
-    padding: 15px 20px;
+    padding: 10px 50px;
     font-size: 16px;
     border-radius: 12px;
+    text-align: left;
+    align-content: flex-start;
 }
 
 .btn1:hover, .btn2:hover, .btn3:hover, .btn4:hover, #start-btn:hover {
@@ -90,4 +95,12 @@ a {
     right: 16px;
 }
 
+#end-screen {
+    text-align: left;
+    font-size: 18;
+}
 
+input {
+    border-radius: 1px;
+    border: solid;
+}
