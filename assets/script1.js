@@ -51,15 +51,21 @@ const questions = [
 const startButton = document.getElementById('start-btn');
 const startScreen = document.getElementById('start-screen');
 const questionsContainer = document.getElementById('question-container');
-const questionsEl = document.getElementById('question')
-const answerButton = document.getElementById('choices')
-const endScreen = document.getElementById('end-screen')
+const questionsEl = document.getElementById('question');
+const answerButton = document.getElementById('choices');
+const endScreen = document.getElementById('end-screen');
+const backButton = document.getElementById('back-btn'); 
+var userInitials = document.querySelector('initials');
+var userScore = document.querySelector('score');
+
 
 let score = 0 
 let randomQuestions 
 let setQuestions = 0
 
 startButton.addEventListener('click', startQuiz)
+
+backButton.addEventListener('click', startQuiz)
 
 // start timer
 var count = document.querySelector("#time");
@@ -88,7 +94,7 @@ function startQuiz(timer) {
 function generateQuestion() {
     nextQuestion (randomQuestions[setQuestions]);
     setQuestions++
-    if (setQuestions == 1) {
+    if (setQuestions <=4) {
         timer()
     } else (setQuestions = 0) [
         endQuiz()
@@ -179,13 +185,12 @@ function nextQuestion (question) {
 
 }
 
-function success () {
+ function success () {
     var correct = document.createElement("p")
     correct.textContent = "Correct!"
     document.querySelector("#choices").appendChild(correct)
     setTimeout(correct, 2000);
-    
-    
+
 }
 
 function failure () {
@@ -196,11 +201,36 @@ function failure () {
 }
 
 
+// get scores 
+function getScores () {
+    var initials = localStorage.getItem("initials");
+    var score = localStorage.getItem("score");
 
+    userInitials.textContent = initials;
+    userScore.textContent = score;
+}
+
+
+// save scores 
+//sumbitButton.addEventListener('click', function (event) {
+ //   event.preventDefault();
+
+    // var initials = document.querySelector('#initials').value;
+    // var score = document.querySelector('#score').value; 
+
+
+    // localStorage.setItem("initials", initials);
+    // localStorage.setItem("score",score);
+    // getScores();
+
+
+// highscores page 
 function highscores () {
     document.querySelector('#highscores').innerHTML = highscores
 }
 
+
+// end quiz 
 function endQuiz () {
     startButton.remove()
     startScreen.remove()
@@ -208,4 +238,3 @@ function endQuiz () {
     endScreen.classList.remove('hide');
     
 }
-

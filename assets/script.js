@@ -3,6 +3,7 @@ const startScreen = document.getElementById('start-screen');
 const questionsContainer = document.getElementById('question-container');
 const questionsEl = document.getElementById('question')
 const answerButton = document.getElementById('choices')
+const backButton = document.getElementById('back-btn'); 
 
 let randomQuestions, setQuestions
 

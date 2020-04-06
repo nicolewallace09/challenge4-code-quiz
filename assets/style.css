@@ -22,7 +22,7 @@ body {
     align-items: center;
 }
 
-.wrapper {
+.wrapper, .hs-wrapper  {
     max-width: 33%;
     justify-content: center;
     text-align: center;
@@ -58,7 +58,13 @@ body {
     border-radius: 12px;
 }
 
-.btn1, .btn2, .btn3, .btn4 {
+.back-btn, .score-btn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.btn1, .btn2, .btn3, .btn4, .submit, .back-btn, .score-btn {
     background-color: var(--darkpurple);
     color: white;
     padding: 10px 50px;
@@ -68,7 +74,7 @@ body {
     align-content: flex-start;
 }
 
-.btn1:hover, .btn2:hover, .btn3:hover, .btn4:hover, #start-btn:hover {
+.btn1:hover, .btn2:hover, .btn3:hover, .btn4:hover, #start-btn:hover, #submit:hover, .back-btn:hover, .score-btn:hover {
     background-color:var(--lightpurple);
 }
 
@@ -95,7 +101,7 @@ a {
     right: 16px;
 }
 
-#end-screen {
+#end-screen, .hs-screen {
     text-align: left;
     font-size: 18;
 }
