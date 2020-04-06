@@ -54,18 +54,12 @@ const questionsContainer = document.getElementById('question-container');
 const questionsEl = document.getElementById('question');
 const answerButton = document.getElementById('choices');
 const endScreen = document.getElementById('end-screen');
-const backButton = document.getElementById('back-btn'); 
-var userInitials = document.querySelector('initials');
-var userScore = document.querySelector('score');
-
 
 let score = 0 
 let randomQuestions 
 let setQuestions = 0
 
 startButton.addEventListener('click', startQuiz)
-
-backButton.addEventListener('click', startQuiz)
 
 // start timer
 var count = document.querySelector("#time");
@@ -125,7 +119,7 @@ function nextQuestion (question) {
     document.querySelector(".btn4").textContent = "4. " + question.answers[array[3]].text
     
 
-
+var score = "1";
     //event listeners
     document.querySelector(`.btn1`).addEventListener("click", function(){
             console.log(question.answers[0].text)
@@ -189,7 +183,6 @@ function nextQuestion (question) {
     var correct = document.createElement("p")
     correct.textContent = "Correct!"
     document.querySelector("#choices").appendChild(correct)
-    setTimeout(correct, 2000);
 
 }
 
@@ -197,38 +190,7 @@ function failure () {
     var wrong = document.createElement("p")
     wrong.textContent = "Wrong!"
     document.querySelector("#choices").appendChild(wrong)
-    
 }
-
-
-// get scores 
-function getScores () {
-    var initials = localStorage.getItem("initials");
-    var score = localStorage.getItem("score");
-
-    userInitials.textContent = initials;
-    userScore.textContent = score;
-}
-
-
-// save scores 
-//sumbitButton.addEventListener('click', function (event) {
- //   event.preventDefault();
-
-    // var initials = document.querySelector('#initials').value;
-    // var score = document.querySelector('#score').value; 
-
-
-    // localStorage.setItem("initials", initials);
-    // localStorage.setItem("score",score);
-    // getScores();
-
-
-// highscores page 
-function highscores () {
-    document.querySelector('#highscores').innerHTML = highscores
-}
-
 
 // end quiz 
 function endQuiz () {

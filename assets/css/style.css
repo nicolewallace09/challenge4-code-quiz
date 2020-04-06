@@ -61,7 +61,7 @@ body {
 .back-btn, .score-btn {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: flex-start
 }
 
 .btn1, .btn2, .btn3, .btn4, .submit, .back-btn, .score-btn {
@@ -80,6 +80,7 @@ body {
 
 a {
     color: var(--lightpurple);
+    text-decoration: none;
 }
 
 
@@ -110,3 +111,16 @@ input {
     border-radius: 1px;
     border: solid;
 }
+
+#highScoreList {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 4rem;
+}
+
+.high-score {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+}
+
+
