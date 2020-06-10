@@ -12,3 +12,5 @@ highScoresList.innerHTML = highScores
     return <li class="high-score">${score.name}-${score.score}</li>
 })
 .join("");
+
+// LOOK UP ACTIVITY 28 from week 4
